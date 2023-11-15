@@ -34,7 +34,7 @@ Ferramentas requeridas:
   - [x] Header
   - [x] Footer
   - [x] Card do produto
-  - [ ] Lista de produtos
+  - [x] Lista de produtos
   - [ ] API
   - [ ] Modal carrinho
   - [ ] Card do carrinho

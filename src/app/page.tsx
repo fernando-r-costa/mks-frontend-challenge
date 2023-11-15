@@ -1,12 +1,12 @@
-import Footer from "./components/footer";
 import Header from "./components/header";
-import ProductCard from "./components/productCard";
+import Footer from "./components/footer";
+import ProductsList from "./Products/page";
 
 export default function Home() {
   return (
     <>
       <Header />
-      <ProductCard />
+      <ProductsList />
       <Footer />
     </>
   );
