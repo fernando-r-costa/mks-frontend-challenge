@@ -32,7 +32,7 @@ Ferramentas requeridas:
 
 - [ ] Mobile
   - [x] Header
-  - [ ] Footer
+  - [x] Footer
   - [ ] Card do produto
   - [ ] Lista de produtos
   - [ ] API
