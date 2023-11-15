@@ -16,7 +16,6 @@ export default function Header() {
 
   const Title = styled.h1`
     color: #fff;
-    font-family: Montserrat;
     font-size: 32px;
     font-weight: 600;
   `;

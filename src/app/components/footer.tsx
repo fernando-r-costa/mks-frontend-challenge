@@ -10,7 +10,6 @@ export default function Footer() {
     justify-content: center;
     align-items: center;
     color: #000;
-    font-family: Montserrat;
     font-size: 12px;
     font-weight: 400;
   `;

@@ -33,7 +33,7 @@ Ferramentas requeridas:
 - [ ] Mobile
   - [x] Header
   - [x] Footer
-  - [ ] Card do produto
+  - [x] Card do produto
   - [ ] Lista de produtos
   - [ ] API
   - [ ] Modal carrinho
