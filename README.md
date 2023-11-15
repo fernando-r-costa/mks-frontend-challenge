@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Desafio mks-frontend-challenge
 
-## Getting Started
+## Índice
 
-First, run the development server:
+- [Visão Geral](#visão-geral)
+  - [O Desafio](#o-desafio)
+- [Meu processo](#meu-processo)
+- [Autor](#autor)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Visão Geral
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### O Desafio
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Para esse desafio, você deve consumir nossa API REST de produtos para exibir a lista de produtos da loja.
+- A aplicação deve conter apenas uma página/rota e um carrinho.
+- Loja: A lista de produtos deve ser buscada de nossa API, use um shimmer/skeleton enquanto estiver em loading.
+- Carrinho: O carrinho deve conter todos os produtos selecionados, juntamente com a opção de aumentar a quantidade de cada produto selecionado.
+- Use do Jest e a testing-library para realizar os testes unitários.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Recursos:
+- UI/UX: Figma loja PS: O design system está incluso, incluindo a fonte.
+- API: API REST de produtos para exibir a lista de produtos da loja.
 
-## Learn More
+Ferramentas requeridas:
+- TypeScript
+- React ou Next.js (Preferimos Next.js)
+- React-query
+- Styled-components
+- Jest
 
-To learn more about Next.js, take a look at the following resources:
+## Meu processo
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [ ] Mobile
+  - [ ] Header
+  - [ ] Footer
+  - [ ] Card do produto
+  - [ ] Lista de produtos
+  - [ ] API
+  - [ ] Modal carrinho
+  - [ ] Card do carrinho
+  - [ ] Interações
+  - [ ] Shimmer/skeleton
+- [ ] Desktop (responsividade)
+- [ ] Testes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Autor
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- LinkedIn - [Fernando R Costa](https://www.linkedin.com/in/fernando-r-costa/)
