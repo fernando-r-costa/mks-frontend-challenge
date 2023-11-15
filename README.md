@@ -31,7 +31,7 @@ Ferramentas requeridas:
 ## Meu processo
 
 - [ ] Mobile
-  - [ ] Header
+  - [x] Header
   - [ ] Footer
   - [ ] Card do produto
   - [ ] Lista de produtos
