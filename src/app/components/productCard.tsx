@@ -61,17 +61,29 @@ const ButtonBuy = styled.button`
   gap: 15px;
 `;
 
-export default function ProductCard() {
+interface ProductCardProps {
+  id: number;
+  name: string;
+  description: string;
+  price: string;
+  photo: string;
+}
+
+const ProductCard: React.FC<ProductCardProps> = ({
+  id,
+  name,
+  description,
+  price,
+  photo,
+}) => {
   return (
     <CardContainer>
-      <Image src="/apple-watch.png" alt="" width={128} height={159} />
+      <Image src={photo} alt={name} width={128} height={159} />
       <CardTitle>
-        <ProductTitle>Apple Watch Series 4 GPS</ProductTitle>
-        <ProductPrice>R$399</ProductPrice>
+        <ProductTitle>{name}</ProductTitle>
+        <ProductPrice>{`R$${parseFloat(price)}`}</ProductPrice>
       </CardTitle>
-      <ProductDescription>
-        Redesigned from scratch and completely revised.
-      </ProductDescription>
+      <ProductDescription>{description}</ProductDescription>
       <ButtonBuy>
         <Image
           src="/shopping-bag.svg"
@@ -83,4 +95,6 @@ export default function ProductCard() {
       </ButtonBuy>
     </CardContainer>
   );
-}
+};
+
+export default ProductCard;
