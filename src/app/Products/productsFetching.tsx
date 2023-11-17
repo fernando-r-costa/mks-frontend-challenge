@@ -47,23 +47,29 @@ export default function ProductsFetching({
     queryFn: () => fetch(baseURL).then((res) => res.json()),
   });
 
-  if (error) {
-    return <Error />;
-  }
-
-  if (isLoading) {
-    return <p>Loading...</p>;
-  }
-
   let productList: Product[] = [];
 
   if (data && Array.isArray(data.products)) {
     productList = data.products;
   }
 
+  const placeholderCards = Array.from({ length: 8 }).map((_, index) => ({
+    id: index,
+    name: "",
+    description: "",
+    price: "",
+    photo: "",
+    quantity: 0,
+  }));
+
+  const renderCards = isLoading ? placeholderCards : productList;
+
+  if (error) {
+    return <Error />;
+  }
   return (
     <List>
-      {productList.map((product: Product) => (
+      {renderCards.map((product: Product) => (
         <ProductCard
           key={product.id}
           id={product.id}
@@ -71,7 +77,8 @@ export default function ProductsFetching({
           description={product.description}
           price={product.price}
           photo={product.photo}
-          addToCart={() => addToCart(product)}
+          addToCart={addToCart}
+          isLoading={isLoading}
         />
       ))}
     </List>

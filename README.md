@@ -39,7 +39,7 @@ Ferramentas requeridas:
   - [x] Modal carrinho
   - [x] Card do carrinho
   - [x] Interações
-  - [ ] Shimmer/skeleton
+  - [x] Shimmer/skeleton
 - [ ] Desktop (responsividade)
 - [ ] Testes
 

@@ -1,6 +1,15 @@
 import Image from "next/image";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Product } from "../Products/productsFetching";
+
+const shimmer = keyframes`
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+`;
 
 const CardContainer = styled.div`
   width: 250px;
@@ -13,6 +22,11 @@ const CardContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding-top: 20px;
+  &.shimmer {
+    background: linear-gradient(-90deg, #f0f0f0 25%, #b9b8b8 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: ${shimmer} 2.5s infinite;
+  }
 `;
 
 const CardTitle = styled.span`
@@ -70,6 +84,7 @@ interface ProductCardProps {
   price: string;
   photo: string;
   addToCart: (product: Product, quantity: number) => void;
+  isLoading: boolean;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({
@@ -79,6 +94,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   price,
   photo,
   addToCart,
+  isLoading,
 }) => {
   const handleAddToCart = () => {
     addToCart(
@@ -94,8 +110,14 @@ const ProductCard: React.FC<ProductCardProps> = ({
     );
   };
 
+  if (isLoading) {
+    return (
+      <CardContainer className={isLoading ? "shimmer" : ""}></CardContainer>
+    );
+  }
+
   return (
-    <CardContainer>
+    <CardContainer className={isLoading ? "shimmer" : ""}>
       <Image src={photo} alt={name} width={128} height={159} />
       <CardTitle>
         <ProductTitle>{name}</ProductTitle>
