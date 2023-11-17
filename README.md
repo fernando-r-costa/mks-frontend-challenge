@@ -38,7 +38,7 @@ Ferramentas requeridas:
   - [x] API
   - [x] Modal carrinho
   - [x] Card do carrinho
-  - [ ] Interações
+  - [x] Interações
   - [ ] Shimmer/skeleton
 - [ ] Desktop (responsividade)
 - [ ] Testes

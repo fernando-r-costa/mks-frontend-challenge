@@ -1,6 +1,6 @@
-"use client";
 import Image from "next/image";
 import styled from "styled-components";
+import { Product } from "../Products/productsFetching";
 
 const CardContainer = styled.div`
   width: 250px;
@@ -60,6 +60,7 @@ const ButtonBuy = styled.button`
   justify-content: center;
   align-items: center;
   gap: 15px;
+  cursor: pointer;
 `;
 
 interface ProductCardProps {
@@ -68,6 +69,7 @@ interface ProductCardProps {
   description: string;
   price: string;
   photo: string;
+  addToCart: (product: Product, quantity: number) => void;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({
@@ -76,7 +78,22 @@ const ProductCard: React.FC<ProductCardProps> = ({
   description,
   price,
   photo,
+  addToCart,
 }) => {
+  const handleAddToCart = () => {
+    addToCart(
+      {
+        id,
+        name,
+        description,
+        price,
+        photo,
+        quantity: 1,
+      },
+      1
+    );
+  };
+
   return (
     <CardContainer>
       <Image src={photo} alt={name} width={128} height={159} />
@@ -85,7 +102,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
         <ProductPrice>{`R$${parseFloat(price)}`}</ProductPrice>
       </CardTitle>
       <ProductDescription>{description}</ProductDescription>
-      <ButtonBuy>
+      <ButtonBuy onClick={handleAddToCart}>
         <Image
           src="/shopping-bag.svg"
           alt="shopping-bag"

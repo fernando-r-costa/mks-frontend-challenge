@@ -1,6 +1,6 @@
-"use client";
 import Image from "next/image";
 import styled from "styled-components";
+import { FC } from "react";
 
 const PageHeader = styled.header`
   width: 100%;
@@ -44,18 +44,27 @@ const CartInfo = styled.div`
   color: #000;
   font-size: 12px;
   font-weight: 700;
+  cursor: pointer;
 `;
 
-export default function Header() {
+interface HeaderProps {
+  onCartClick: () => void;
+  cartQuantity: number;
+}
+
+const Header: FC<HeaderProps> = ({ onCartClick, cartQuantity }) => {
   return (
     <PageHeader>
       <HeaderLogo>
         <HeaderTitle>MKS</HeaderTitle>
         <HeaderSubTitle>Sistemas</HeaderSubTitle>
       </HeaderLogo>
-      <CartInfo>
-        <Image src="/cart.svg" alt="cart" width={10.982} height={10.4} />0
+      <CartInfo onClick={onCartClick}>
+        <Image src="/cart.svg" alt="cart" width={10.982} height={10.4} />
+        {cartQuantity > 0 ? <span>{cartQuantity}</span> : "0"}
       </CartInfo>
     </PageHeader>
   );
-}
+};
+
+export default Header;

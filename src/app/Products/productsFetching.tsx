@@ -1,4 +1,3 @@
-"use client";
 import { useQuery } from "@tanstack/react-query";
 import ProductCard from "../components/productCard";
 import { styled } from "styled-components";
@@ -24,7 +23,8 @@ const List = styled.ul`
 const baseURL =
   "https://mks-frontend-challenge-04811e8151e6.herokuapp.com/api/v1/products?page=1&rows=8&sortBy=name&orderBy=ASC";
 
-interface Product {
+export interface Product {
+  quantity: number;
   id: number;
   name: string;
   description: string;
@@ -37,7 +37,11 @@ interface ProductsResponse {
   count: number;
 }
 
-export default function ProductsFetching() {
+export default function ProductsFetching({
+  addToCart,
+}: {
+  addToCart: (product: Product) => void;
+}) {
   const { isLoading, data, error } = useQuery<ProductsResponse>({
     queryKey: ["products", baseURL],
     queryFn: () => fetch(baseURL).then((res) => res.json()),
@@ -67,6 +71,7 @@ export default function ProductsFetching() {
           description={product.description}
           price={product.price}
           photo={product.photo}
+          addToCart={() => addToCart(product)}
         />
       ))}
     </List>

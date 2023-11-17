@@ -1,13 +1,13 @@
-"use client";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
-import ProductsFetching from "./productsFetching";
+import ProductsFetching, { Product } from "./productsFetching";
 
 const queryClient = new QueryClient();
 
-export default function ProductsList() {
+export default function ProductsList({ addToCart }: { addToCart: (product: Product) => void }) {
+  
   return (
     <QueryClientProvider client={queryClient}>
-      <ProductsFetching />
+      <ProductsFetching addToCart={addToCart}/>
     </QueryClientProvider>
   );
 }
