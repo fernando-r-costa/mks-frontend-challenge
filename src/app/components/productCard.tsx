@@ -32,10 +32,11 @@ const ProductPrice = styled.h3`
   height: 30px;
   border-radius: 5px;
   background: #373737;
-  padding: 5px 12px;
   color: #fff;
   font-size: 15px;
   font-weight: 700;
+  text-align: center;
+  padding: 5px 8px;
 `;
 
 const ProductDescription = styled.h4`
