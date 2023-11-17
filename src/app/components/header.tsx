@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import styled from "styled-components";
 
 const PageHeader = styled.header`
@@ -8,28 +9,53 @@ const PageHeader = styled.header`
   background: #0f52ba;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding-left: 20px;
+  padding: 0 23px 0 20px;
+`;
+
+const HeaderLogo = styled.div`
+  display: flex;
+  align-items: center;
   gap: 10px;
 `;
 
-const Title = styled.h1`
+const HeaderTitle = styled.h1`
   color: #fff;
   font-size: 32px;
   font-weight: 600;
 `;
 
-const SubTitle = styled.h2`
+const HeaderSubTitle = styled.h2`
   color: #fff;
   font-size: 16px;
   font-weight: 300;
 `;
 
+const CartInfo = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 52px;
+  height: 26px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #fff;
+  color: #000;
+  font-size: 12px;
+  font-weight: 700;
+`;
+
 export default function Header() {
   return (
     <PageHeader>
-      <Title>MKS</Title>
-      <SubTitle>Sistemas</SubTitle>
+      <HeaderLogo>
+        <HeaderTitle>MKS</HeaderTitle>
+        <HeaderSubTitle>Sistemas</HeaderSubTitle>
+      </HeaderLogo>
+      <CartInfo>
+        <Image src="/cart.svg" alt="cart" width={10.982} height={10.4} />0
+      </CartInfo>
     </PageHeader>
   );
 }

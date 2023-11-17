@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <Cart />
+      {/* <Cart /> */}
       <ProductsList />
       <Footer />
     </>
