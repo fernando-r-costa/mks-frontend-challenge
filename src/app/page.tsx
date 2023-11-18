@@ -5,6 +5,17 @@ import ProductsList from "./Products/page";
 import Cart from "./components/cart";
 import { useState } from "react";
 import { Product } from "./Products/productsFetching";
+import styled from "styled-components";
+
+const Body = styled.body`
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+`;
 
 export default function Home() {
   const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
@@ -64,7 +75,7 @@ export default function Home() {
   );
 
   return (
-    <>
+    <Body>
       <Header onCartClick={handleCartClick} cartQuantity={cartQuantity} />
       {isCartOpen && (
         <Cart
@@ -78,6 +89,6 @@ export default function Home() {
       )}
       <ProductsList addToCart={addToCart} />
       <Footer />
-    </>
+    </Body>
   );
 }

@@ -11,7 +11,7 @@ const shimmer = keyframes`
   }
 `;
 
-const CardContainer = styled.div`
+const CardContainer = styled.li`
   width: 250px;
   height: 328px;
   border-radius: 8px;
@@ -118,7 +118,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
   return (
     <CardContainer className={isLoading ? "shimmer" : ""}>
-      <Image src={photo} alt={name} width={128} height={159} />
+      <Image src={photo} alt={name} width={200} height={200}style={{ width: 'auto', height: '159px' }} />
       <CardTitle>
         <ProductTitle>{name}</ProductTitle>
         <ProductPrice>{`R$${parseFloat(price)}`}</ProductPrice>

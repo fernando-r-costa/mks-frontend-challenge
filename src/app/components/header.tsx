@@ -60,7 +60,13 @@ const Header: FC<HeaderProps> = ({ onCartClick, cartQuantity }) => {
         <HeaderSubTitle>Sistemas</HeaderSubTitle>
       </HeaderLogo>
       <CartInfo onClick={onCartClick}>
-        <Image src="/cart.svg" alt="cart" width={10.982} height={10.4} />
+        <Image
+          src="/cart.svg"
+          alt="cart"
+          width={200}
+          height={200}
+          style={{ width: "auto", height: "10.4px" }}
+        />
         {cartQuantity > 0 ? <span>{cartQuantity}</span> : "0"}
       </CartInfo>
     </PageHeader>

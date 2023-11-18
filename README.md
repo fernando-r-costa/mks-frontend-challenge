@@ -40,7 +40,7 @@ Ferramentas requeridas:
   - [x] Card do carrinho
   - [x] Interações
   - [x] Shimmer/skeleton
-- [ ] Desktop (responsividade)
+- [x] Desktop (responsividade)
 - [ ] Testes
 
 ## Autor

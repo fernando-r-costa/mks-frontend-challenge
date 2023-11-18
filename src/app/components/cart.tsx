@@ -10,25 +10,39 @@ const CartContainer = styled.div`
   z-index: 1;
   justify-content: space-between;
   align-items: center;
-  right: 0;
+  right: -2px;
   top: 0;
   width: 330px;
   height: 100vh;
-  overflow: auto;
+  overflow: hidden;
   background: #0f52ba;
   box-shadow: -5px 0px 6px 0px rgba(0, 0, 0, 0.13);
+
+  @media (min-width: 780px) {
+    width: 486px;
+  }
 `;
 
 const CartHeader = styled.span`
   display: flex;
   justify-content: space-between;
   margin: 25px 15px 0 32px;
+
+  @media (min-width: 780px) {
+    width: 486px;
+    margin: 0;
+    padding: 36px 15px 0 47px;
+  }
 `;
 
 const CartHeaderTitle = styled.p`
   color: #ffffff;
   font-size: 27px;
   font-weight: 700;
+
+  @media (min-width: 780px) {
+    width: 250px;
+  }
 `;
 
 const CartHeaderClose = styled.p`
@@ -41,15 +55,28 @@ const CartHeaderClose = styled.p`
   font-size: 40px;
   font-weight: 400;
   cursor: pointer;
+
+  @media (min-width: 780px) {
+    width: 55px;
+    transform: scale(0.7);
+    color: #fff;
+  }
 `;
 
 const CartProductsContainer = styled.div`
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  overflow-x: hidden;
   overflow-y: auto;
   margin: 30px 0;
   gap: 10px;
+
+  @media (min-width: 780px) {
+    width: 486px;
+    margin: 0;
+    padding: 60px 15px 0 47px;
+  }
 `;
 
 const CartResume = styled.span`
@@ -58,6 +85,12 @@ const CartResume = styled.span`
   margin: 0 43px 0 32px;
   padding: 32px 0;
   gap: 73px;
+
+  @media (min-width: 780px) {
+    width: 486px;
+    margin: 0;
+    padding: 60px 0 32px 47px;
+  }
 `;
 
 const CartResumeTotal = styled(CartHeaderTitle)`
@@ -75,6 +108,10 @@ const CartFinish = styled.p`
   font-weight: 700;
   padding: 21px 0;
   cursor: pointer;
+
+  @media (min-width: 780px) {
+    font-size: 28px;
+  }
 `;
 
 interface CartProps {

@@ -10,6 +10,7 @@ const PageFooter = styled.footer`
   color: #000;
   font-size: 12px;
   font-weight: 400;
+  padding: 15px 0;
 `;
 
 export default function Footer() {

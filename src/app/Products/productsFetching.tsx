@@ -3,6 +3,13 @@ import ProductCard from "../components/productCard";
 import { styled } from "styled-components";
 import Error from "../components/error";
 
+const Main = styled.main`
+  width: 100%;
+  height: 100%;
+  flex-grow: 1;
+  overflow-y: auto;
+`;
+
 const List = styled.ul`
   display: flex;
   justify-content: center;
@@ -68,19 +75,21 @@ export default function ProductsFetching({
     return <Error />;
   }
   return (
-    <List>
-      {renderCards.map((product: Product) => (
-        <ProductCard
-          key={product.id}
-          id={product.id}
-          name={product.name}
-          description={product.description}
-          price={product.price}
-          photo={product.photo}
-          addToCart={addToCart}
-          isLoading={isLoading}
-        />
-      ))}
-    </List>
+    <Main>
+      <List>
+        {renderCards.map((product: Product) => (
+          <ProductCard
+            key={product.id}
+            id={product.id}
+            name={product.name}
+            description={product.description}
+            price={product.price}
+            photo={product.photo}
+            addToCart={addToCart}
+            isLoading={isLoading}
+          />
+        ))}
+      </List>
+    </Main>
   );
 }
